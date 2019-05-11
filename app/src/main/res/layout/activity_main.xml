@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff4d4d"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/login_customer"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="Login as Customer"
+        android:textColor="#f8f9fa"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:background="@drawable/button_background"
+        android:backgroundTint="#584e4a"
+        android:fontFamily="@font/raleway_regular"
+        app:layout_constraintBottom_toBottomOf="@id/login_driver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:id="@+id/login_driver"
+        android:textSize="20dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="#584e4a"
+        android:text="Login as Driver"
+        android:textColor="#f8f9fa"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:fontFamily="@font/raleway_regular"
+        app:layout_constraintTop_toTopOf="@id/login_customer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+</android.support.constraint.ConstraintLayout>
