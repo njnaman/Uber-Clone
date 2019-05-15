@@ -161,25 +161,25 @@ public class driver_map extends FragmentActivity implements OnMapReadyCallback, 
         {String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("DriversAvailable");
             GeoFire geoFire = new GeoFire(ref);
-            geoFire.removeLocation(userid);}
+            geoFire.removeLocation(userid);
+            loggedin = false;
+        }
 
     }
 
 
     private void getAssignedCustomer(){
         String driverId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DatabaseReference assignedCustomer = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(driverId);
+        DatabaseReference assignedCustomer = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(driverId).child("CustomerRideId");
         assignedCustomer.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    Map<String,Object> map = (Map<String, Object>) dataSnapshot.getValue();
-                    if(map.get("CustomerRideId")!=null){
-                        customerId = map.get("CustomerRideId").toString();
+                        customerId = dataSnapshot.getValue().toString();
                         getAssignedCustomerPickupLocation();
 
                     }
-                }
+
             }
 
             @Override

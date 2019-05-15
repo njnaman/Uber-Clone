@@ -218,6 +218,7 @@ public class customer_map extends FragmentActivity implements OnMapReadyCallback
     private Marker driverMarker;
     private void getDriverLocation(){
         DatabaseReference driverLocationef = FirebaseDatabase.getInstance().getReference().child("DriversWorking").child(driverFoundId).child("l");
+
         driverLocationef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -232,7 +233,17 @@ public class customer_map extends FragmentActivity implements OnMapReadyCallback
                     if(map.get(1)!=null){
                         longitude =Double.parseDouble(map.get(1).toString());
                     }
-                    request.setText("Driver Found");
+
+                    Location customerLoc = new Location("");
+                    customerLoc.setLatitude(pickupLocation.latitude);
+                    customerLoc.setLongitude(pickupLocation.longitude);
+
+                    Location driverLoc = new Location("");
+                    driverLoc.setLongitude(longitude);
+                    driverLoc.setLatitude(latitude);
+
+                    float distance = customerLoc.distanceTo(driverLoc);
+                    request.setText("Driver Found at " + distance);
 
                     LatLng driverLocation = new LatLng(latitude,longitude);
                     if(driverMarker!=null){
