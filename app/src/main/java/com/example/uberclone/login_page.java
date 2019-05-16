@@ -102,8 +102,8 @@ public class login_page extends AppCompatActivity {
 
                             }
                             else {
-                                Intent intent = new Intent(login_page.this, customer_map.class);
-                                startActivity(intent);
+                                    Intent intent = new Intent(login_page.this, customer_map.class);
+                                    startActivity(intent);
                             }
                         }
                     });

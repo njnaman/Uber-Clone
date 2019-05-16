@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -45,7 +46,7 @@ public class driver_map extends FragmentActivity implements OnMapReadyCallback, 
     LocationRequest locationRequest;
     private Button logout;
     boolean loggedin=true;
-    private  String customerId;
+    private  String customerId="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +88,7 @@ public class driver_map extends FragmentActivity implements OnMapReadyCallback, 
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
+
         }
         bulidgoogleApiClient();
         mMap.setMyLocationEnabled(true);
@@ -106,6 +108,7 @@ public class driver_map extends FragmentActivity implements OnMapReadyCallback, 
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
 
         if(loggedin) {
+            Log.i("abcdef",customerId);
             String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
             DatabaseReference refAvailable = FirebaseDatabase.getInstance().getReference().child("DriversAvailable");
             DatabaseReference refWorking = FirebaseDatabase.getInstance().getReference().child("DriversWorking");

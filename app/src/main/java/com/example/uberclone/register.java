@@ -92,8 +92,13 @@ FirebaseAuth.AuthStateListener authStateListener;
 
                                     }
                                     else {
+                                        if(current_category.equals("customer")){
                                         Intent intent = new Intent(register.this, customer_map.class);
-                                        startActivity(intent);
+                                        startActivity(intent);}
+                                        else {
+                                            Intent intent = new Intent(register.this, driver_map.class);
+                                            startActivity(intent);
+                                        }
                                     }
                                 }
                             });

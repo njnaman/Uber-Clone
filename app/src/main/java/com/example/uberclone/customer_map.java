@@ -104,7 +104,7 @@ public class customer_map extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
+        return;
         }
         bulidgoogleApiClient();
         mMap.setMyLocationEnabled(true);
