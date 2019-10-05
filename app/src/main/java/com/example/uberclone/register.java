@@ -41,24 +41,6 @@ FirebaseAuth.AuthStateListener authStateListener;
 
 
 
-        /*authStateListener=new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if(user!=null){
-                    Intent intent = new Intent(register.this,map.class);
-                    intent.putExtra("clicked","driver");
-                    startActivity(intent);
-                    finish();
-
-
-                }
-            }
-        };*/
-
-
-
-
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,16 +99,4 @@ FirebaseAuth.AuthStateListener authStateListener;
 
 
     }
-
-    /*@Override
-    protected void onStart() {
-        super.onStart();
-        firebaseAuth.addAuthStateListener(authStateListener);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        firebaseAuth.removeAuthStateListener(authStateListener);
-    }*/
 }
