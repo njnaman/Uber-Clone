@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,login_page.class);
                 intent.putExtra("clicked","customer");
                 startActivity(intent);
-               // finish();
             }
         });
 
@@ -34,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,login_page.class);
                 intent.putExtra("clicked","driver");
                 startActivity(intent);
-               // finish();
             }
         });
 
