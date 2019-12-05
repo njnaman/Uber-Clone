@@ -21,8 +21,8 @@ public class register extends AppCompatActivity {
 private String current_category;
 private TextView user_name_rg,user_pswrd_rg,register_label;
 private Button register;
-FirebaseAuth firebaseAuth;
-FirebaseAuth.AuthStateListener authStateListener;
+private FirebaseAuth firebaseAuth;
+private FirebaseAuth.AuthStateListener authStateListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
