@@ -21,8 +21,8 @@ public class register extends AppCompatActivity {
 private String current_category;
 private TextView user_name_rg,user_pswrd_rg,register_label;
 private Button register;
-FirebaseAuth firebaseAuth;
-FirebaseAuth.AuthStateListener authStateListener;
+private FirebaseAuth firebaseAuth;
+private FirebaseAuth.AuthStateListener authStateListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,24 +38,6 @@ FirebaseAuth.AuthStateListener authStateListener;
             register_label.setText("Driver Register");
         else if(current_category.equals("customer"))
             register_label.setText("Customer Register");
-
-
-
-        /*authStateListener=new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if(user!=null){
-                    Intent intent = new Intent(register.this,map.class);
-                    intent.putExtra("clicked","driver");
-                    startActivity(intent);
-                    finish();
-
-
-                }
-            }
-        };*/
-
 
 
 
@@ -117,16 +99,4 @@ FirebaseAuth.AuthStateListener authStateListener;
 
 
     }
-
-    /*@Override
-    protected void onStart() {
-        super.onStart();
-        firebaseAuth.addAuthStateListener(authStateListener);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        firebaseAuth.removeAuthStateListener(authStateListener);
-    }*/
 }
